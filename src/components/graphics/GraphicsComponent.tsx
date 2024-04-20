@@ -48,9 +48,9 @@ export default function GraphicsComponent() {
             </div>
             <div >
                 <h1 className='graphicsTitleText flex justify-center text-4xl py-10'>Gráficas</h1>
-                <div className='graphicsContainer'>
+                <div className='graphicsContainer '>
                     <BarChart
-                        h={250}
+                        h={'30vh'}
                         data={data}
                         dataKey="month"
                         type="stacked"
@@ -65,7 +65,7 @@ export default function GraphicsComponent() {
                     />
                     <div>
                         <BarChart
-                            h={250}
+                            h={'30vh'}
                             data={data}
                             dataKey="month"
                             tooltipProps={{
@@ -80,7 +80,7 @@ export default function GraphicsComponent() {
                     </div>
                     <div>
                         <BarChart
-                            h={250}
+                            h={'30vh'}
                             data={data}
                             dataKey="month"
                             type="stacked"
@@ -98,7 +98,7 @@ export default function GraphicsComponent() {
                     </div>
                     <div>
                         <LineChart
-                            h={300}
+                            h={'30vh'}
                             data={data2}
                             dataKey="date"
                             tooltipProps={{
