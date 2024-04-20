@@ -1,0 +1,54 @@
+.layoutContainer {
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+
+.sideBarContainer {
+  background-color: #228ae4;
+  height: 90vh;
+  display: grid;
+  grid-template-rows: repeat(4, 25%);
+}
+
+.sideBarText {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  line-height: normal;
+  letter-spacing: 1px;
+  font-weight: 500;
+  border: solid 1px #8c8c8e;
+}
+.offersTableContainer {
+  border: solid 2px #8c8c8e;
+  margin: 2vh;
+  border-radius: 10px;
+  padding: 5vh;
+}
+
+.offersTableHeader {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+
+.offersTableContent {
+  display: grid;
+  grid-template-columns: repeat(6, 16.66%);
+  grid-template-rows: auto;
+  margin-top: 5vh;
+  box-shadow: 0px 2px 4px rgba(18, 18, 134, 0.9);
+}
+
+.itemsHeaderTableText {
+  border: solid 1px black;
+  font-size: 18px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+
+.itemsTableDescription {
+  border: solid 1px black;
+  font-size: 16px;
+  font-family: "Ubuntu", sans-serif;
+  padding: 1vh;
+  background-color: #12b886;
+}
