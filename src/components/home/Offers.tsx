@@ -1,4 +1,4 @@
-import { Button, Group, Input } from '@mantine/core'
+import { Button, Group, Input, Select } from '@mantine/core'
 import Link from 'next/link'
 import React from 'react'
 import { itemsSidebarArray } from '@/utils/itemsSidebarArray'
@@ -22,13 +22,13 @@ export default function Offers() {
       <div className='offersTableContainer'>
         <div className='offersTableHeader'>
           <div className='p-2 flex justify-center items-center '>País:
-            <Input placeholder="País" size="xs" radius="xs" className='px-2' />
+            <Input placeholder="Colombia" size="xs" radius="xs" className='px-2' disabled />
           </div>
-          <div className='p-2 flex justify-center items-center '>Tipo:
-            <Input placeholder="Framework" size="xs" radius="xs" className='px-2' />
+          <div className='p-2 flex justify-center items-center '>Categoría:
+            <Select placeholder="Framework" size="xs" radius="xs" className='px-2' />
           </div>
 
-          <div className='p-2 flex justify-center items-center '>Especialización:
+          <div className='p-2 flex justify-center items-center '>Palabra clave en el título:
             <Input placeholder="Especialización" size="xs" radius="xs" className='px-2' />
           </div>
           <div className='flex justify-center items-center p-4'>
@@ -37,6 +37,7 @@ export default function Offers() {
             </Group>
           </div>
         </div>
+        <div className='flex justify-center text-3xl'>Este es el título dinámico</div>
         <div className='offersTableContent'>
           {itemsHeaderTableArray.map((item, index) =>
             <div key={index} className='itemsHeaderTableText flex justify-center items-center h-[8vh] bg-[#7950F2]'>

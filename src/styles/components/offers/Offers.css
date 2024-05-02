@@ -27,12 +27,12 @@
 
 .offersTableHeader {
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: 15% 25% 35% 25%;
 }
 
 .offersTableContent {
   display: grid;
-  grid-template-columns: repeat(6, 16.66%);
+  grid-template-columns: 20% repeat(5, 16%);
   grid-template-rows: auto;
   margin-top: 5vh;
   box-shadow: 0px 2px 4px rgba(18, 18, 134, 0.9);
@@ -40,7 +40,7 @@
 
 .itemsHeaderTableText {
   border: solid 1px black;
-  font-size: 18px;
+  font-size: 17px;
   font-family: "Ubuntu", sans-serif;
   font-weight: 500;
 }
