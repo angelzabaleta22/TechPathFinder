@@ -8,7 +8,7 @@ export default function offers (req: NextApiRequest, res: NextApiResponse) {
   switch (method) {
     case "GET":
       if (!keyword) {
-        index(res)      
+        index(res)
       } else {
         getByKeyword(res, keyword)
       }
@@ -22,7 +22,7 @@ export default function offers (req: NextApiRequest, res: NextApiResponse) {
 
 async function index(res: NextApiResponse) {
   const technologies = await conn.query(
-    'SELECT t.id, t.name AS technology, c.name AS category FROM technologies AS t INNER JOIN categories AS c ON t.category_id = c.id'
+    'SELECT t.id, t.name AS technology, t.average_salary, t.highest_salary, t.lowest_salary, c.name AS category FROM technologies AS t INNER JOIN categories AS c ON t.category_id = c.id'
   )
 
   for (let i: number = 0; i < technologies.rows.length; i++) {
