@@ -4,11 +4,12 @@ import { conn } from "../../../utils/database"
 export default function offers (req: NextApiRequest, res: NextApiResponse) {
   const { method } = req
   const { keyword } = req.query
+  const { offset } = req.query
 
   switch (method) {
     case "GET":
       if (!keyword) {
-        index(res)
+        index(res, offset)
       } else {
         getByKeyword(res, keyword)
       }
@@ -20,9 +21,9 @@ export default function offers (req: NextApiRequest, res: NextApiResponse) {
   }
 }
 
-async function index(res: NextApiResponse) {
+async function index(res: NextApiResponse, offset: any) {  
   const technologies = await conn.query(
-    'SELECT t.id, t.name AS technology, t.average_salary, t.highest_salary, t.lowest_salary, c.name AS category FROM technologies AS t INNER JOIN categories AS c ON t.category_id = c.id'
+    'SELECT t.id, t.name AS technology, t.average_salary, t.highest_salary, t.lowest_salary, c.name AS category FROM technologies AS t INNER JOIN categories AS c ON t.category_id = c.id LIMIT 10 OFFSET $1', [offset]
   )
 
   for (let i: number = 0; i < technologies.rows.length; i++) {
